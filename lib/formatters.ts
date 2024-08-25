@@ -4,7 +4,7 @@ const CURRENTCY_FORMATTER = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 0,
 });
 
-export function formatCurrentcy(amount: number) {
+export function formatCurrency(amount: number) {
   return CURRENTCY_FORMATTER.format(amount);
 }
 

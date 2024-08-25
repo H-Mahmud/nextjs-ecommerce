@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { formatCurrentcy, formatNumber } from '@/lib/formatters';
+import { formatCurrency, formatNumber } from '@/lib/formatters';
 import db from '@/prisma/db';
 
 async function getSalesData() {
@@ -58,11 +58,11 @@ export default async function AdminDashboard() {
       <DashboardCard
         title='Sales'
         subtitle={`${formatNumber(saleData.numberOfSales)} Orders`}
-        body={formatCurrentcy(saleData.amount)}
+        body={formatCurrency(saleData.amount)}
       />
       <DashboardCard
         title='Customers'
-        subtitle={`${formatCurrentcy(userData.averageValuePerUser)} Average Value`}
+        subtitle={`${formatCurrency(userData.averageValuePerUser)} Average Value`}
         body={formatNumber(userData.userCount)}
       />
       <DashboardCard

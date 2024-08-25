@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { formatCurrentcy } from '@/lib/formatters';
+import { formatCurrency } from '@/lib/formatters';
 import { useState } from 'react';
 import { addProduct } from '../../_actions/products';
 
@@ -27,7 +27,7 @@ export default function ProductForm() {
           onChange={(e) => setPriceInCents(Number(e.target.value) || undefined)}
         />
         <div className='text-muted-foreground'>
-          {formatCurrentcy((priceInCents || 0) / 100)}
+          {formatCurrency((priceInCents || 0) / 100)}
         </div>
       </div>
       <div className='space-y-2'>
