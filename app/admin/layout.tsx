@@ -1,4 +1,4 @@
-import { Nav, NavLink } from "./components/Nav";
+import { Nav, NavLink } from './components/Nav';
 
 export default function AdminLayout({
   children,
@@ -8,12 +8,12 @@ export default function AdminLayout({
   return (
     <>
       <Nav>
-        <NavLink href="/admin">Dashobard</NavLink>
-        <NavLink href="/admin/products">Proeucts</NavLink>
-        <NavLink href="/admin/users">Customers</NavLink>
-        <NavLink href="/admin/orders">Sales</NavLink>
+        <NavLink href='/admin'>Dashobard</NavLink>
+        <NavLink href='/admin/products'>Proeucts</NavLink>
+        <NavLink href='/admin/users'>Customers</NavLink>
+        <NavLink href='/admin/orders'>Sales</NavLink>
       </Nav>
-      <div className="container my-6">{children}</div>
+      <div className='container my-6'>{children}</div>
     </>
   );
 }
