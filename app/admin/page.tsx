@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { formatCurrentcy, formatNumber } from '@/lib/formatters';
 import db from '@/prisma/db';
 
 async function getSalesData() {
@@ -25,8 +26,8 @@ export default async function AdminDashboard() {
     <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
       <DashboardCard
         title='Sales'
-        subtitle={saleData.numberOfSales}
-        body={saleData.amount}
+        subtitle={`${formatNumber(saleData.numberOfSales)} Orders`}
+        body={formatCurrentcy(saleData.amount)}
       />
     </div>
   );
@@ -43,9 +44,9 @@ function DashboardCard({ title, subtitle, body }: DashboardCardProps) {
     <Card>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
+        <CardDescription>{subtitle}</CardDescription>
       </CardHeader>
       <CardContent>
-        <CardDescription>{subtitle}</CardDescription>
         <p>{body}</p>
       </CardContent>
     </Card>
