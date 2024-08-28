@@ -2,11 +2,11 @@
 
 import { DropdownMenuItem } from '@/components/ui/dropdown-menu';
 import { useTransition } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   deleteProduct,
   togglerProductAvailability,
-} from '../_actions/products';
-import { useRouter } from 'next/navigation';
+} from '../../_actions/products';
 
 export function ActiveTogglerDropdownItem({
   id,
