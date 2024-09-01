@@ -90,7 +90,7 @@ function Form({
 
     const orderExist = await userOrderExists(email, productId);
     if (orderExist) {
-      setErrorMessage(
+      return setErrorMessage(
         'You have already purchased this product. Try downloading it from the My Orders page.'
       );
     }
