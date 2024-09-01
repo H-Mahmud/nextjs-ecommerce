@@ -11,7 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { formatNumber } from '@/lib/formatters';
+import { formatCurrency } from '@/lib/formatters';
 import db from '@/prisma/db';
 import { MoreVertical } from 'lucide-react';
 import { PageHeader } from '../_components/PageHeader';
@@ -60,7 +60,7 @@ async function UserTable() {
             <TableCell>{user.email}</TableCell>
             <TableCell>{user.orders.length}</TableCell>
             <TableCell>
-              {formatNumber(
+              {formatCurrency(
                 user.orders.reduce((sum, o) => o.pricePaidInCents + sum, 0) /
                   100
               )}
